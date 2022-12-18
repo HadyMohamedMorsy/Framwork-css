@@ -1,0 +1,17 @@
+// header all devices
+@each $Property-header , $value-header  in $display-Header {
+    h#{$Property-header}{
+        font-size : $value-header;
+    }
+}
+
+// header-sizes special devices
+@each $device-size, $value in $grid-breakpoints-up {
+    @include media-breakpoint-up($device-size){
+        @each $Property-header , $value-header  in $display-Header {
+            .h-#{$device-size}-#{$Property-header}{
+                font-size : $value-header;
+            }
+        }
+    }
+}

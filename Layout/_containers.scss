@@ -1,12 +1,12 @@
 .contentContainer{
-    padding-right: calc($bs-gutter-x * 0.5);
-    padding-left:  calc($bs-gutter-x * 0.5);
-    margin-right: auto;
-    margin-left: auto;
+    padding-inline-end: calc($bs-gutter-x * 0.5);
+    padding-inline-start:  calc($bs-gutter-x * 0.5);
+    margin-inline-start: auto;
+    margin-inline-end: auto;
   }
   
   @each $device-size, $value in $grid-breakpoints-up{
-    .container-#{$device-size}{
+    .container-#{$device-size} , .container{
       @extend .contentContainer;
     }
   }

@@ -1,0 +1,17 @@
+// display all devices 
+@each $Property-displays , $value-displays  in $displays {
+    .d-#{$Property-displays}{
+        display : $value-displays;
+    }
+}
+
+// display all devices special device
+@each $device-size, $value in $grid-breakpoints-up {
+    @include media-breakpoint-up($device-size){
+        @each $Property-displays , $value-displays  in $displays {
+            .d-#{$device-size}-#{$Property-displays}{
+                display : $value-displays;
+            }
+        }
+    }
+}

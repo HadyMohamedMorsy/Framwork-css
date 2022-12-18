@@ -6,9 +6,42 @@
 .position-absolute{
     position: absolute;
 }
+// fixed
+.position-fixed{
+    position: fixed;
+}
 
-// direction-position Top
-@each $device-size, $value in $grid-breakpoints-down {
+// direction-position Top 
+@each $Property-position , $value-direction  in $direction-Position {
+    .top-#{$Property-position}{
+        inset-block-start : $value-direction;
+    }
+}
+
+// direction-position Top 
+@each $Property-position , $value-direction  in $direction-Position {
+    .bottom-#{$Property-position}{
+        inset-block-end : $value-direction;
+    }
+}
+
+// direction-position Top 
+@each $Property-position , $value-direction  in $direction-Position {
+    .left-#{$Property-position}{
+        inset-inline-start : $value-direction;
+    }
+}
+
+// direction-position Top 
+@each $Property-position , $value-direction  in $direction-Position {
+    .right-#{$Property-position}{
+        inset-inline-end : $value-direction;
+    }
+}
+
+
+// direction-position Top special device
+@each $device-size, $value in $grid-breakpoints-up {
     @include media-breakpoint-up($device-size){
         @each $Property-position , $value-direction  in $direction-Position {
             .top-#{$device-size}-#{$Property-position}{
@@ -18,8 +51,8 @@
     }
 }
 
-// direction-position bottom
-@each $device-size, $value in $grid-breakpoints-down {
+// direction-position bottom special device
+@each $device-size, $value in $grid-breakpoints-up {
     @include media-breakpoint-up($device-size){
         @each $Property-position , $value-direction  in $direction-Position {
             .bottom-#{$device-size}-#{$Property-position}{
@@ -29,8 +62,8 @@
     }
 }
 
-// direction-position left
-@each $device-size, $value in $grid-breakpoints-down {
+// direction-position left special device
+@each $device-size, $value in $grid-breakpoints-up {
     @include media-breakpoint-up($device-size){
         @each $Property-position , $value-direction  in $direction-Position {
             .left-#{$device-size}-#{$Property-position}{
@@ -40,8 +73,8 @@
     }
 }
 
-// direction-position right
-@each $device-size, $value in $grid-breakpoints-down {
+// direction-position right special device
+@each $device-size, $value in $grid-breakpoints-up {
     @include media-breakpoint-up($device-size){
         @each $Property-position , $value-direction  in $direction-Position {
             .right-#{$device-size}-#{$Property-position}{

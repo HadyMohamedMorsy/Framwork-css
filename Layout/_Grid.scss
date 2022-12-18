@@ -1,4 +1,3 @@
-$columns: 12;
 
 // calc all grid column col-md-12 etc ...
 @each $device-size, $value in $grid-breakpoints-up{
@@ -6,11 +5,23 @@ $columns: 12;
         @for $i from 1 through $columns {
             .col-#{$device-size}-#{$i} {
                 flex: 0 0 auto;
-                width: calc(100 /($columns / $i) * 1%);
+                padding-inline-start: map-get($padding , left );
+                padding-inline-end: map-get($padding , right );
+                width: calc(100 /($columns / $i) * 1% - (map-get($padding , left ) + map-get($padding , right )));
             }   
         }
     }
 }
+
+
+// All Offset Start Margin Line start All devices
+@for $i from 1 through $columns {
+    .offset-start-#{$i} {
+        margin-inline-end:  calc(100 /($columns / $i) * 1%);
+    }   
+}
+
+
 // All Offset Start Margin Line start
 @each $device-size, $value in $grid-breakpoints-up{
     @include media-breakpoint-up($device-size){
@@ -22,7 +33,14 @@ $columns: 12;
     }
 }
 
-// All Offset Start Margin Line end
+// All Offset Start Margin Line end All devices
+@for $i from 1 through $columns {
+    .offset-end-#{$i} {
+        margin-inline-end:  calc(100 /($columns / $i) * 1%);
+    }   
+}
+
+// All Offset Start Margin Line end special devices
 @each $device-size, $value in $grid-breakpoints-up{
     @include media-breakpoint-up($device-size){
         @for $i from 1 through $columns {

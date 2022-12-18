@@ -1,0 +1,18 @@
+// direction-text-align all devices
+@each $Property-direction , $value-direction  in $text-direction {
+    .text-align-#{$Property-direction}{
+        text-align : $value-direction;
+    }
+}
+
+
+// direction-text-align special devices
+@each $device-size, $value in $grid-breakpoints-up {
+    @include media-breakpoint-up($device-size){
+        @each $Property-direction , $value-direction  in $text-direction {
+            .text-align-#{$device-size}-#{$Property-direction}{
+                text-align : $value-direction;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.row{
+    margin-inline-end: - calc($bs-gutter-x * 0.5);
+    margin-inline-start: - calc($bs-gutter-x * 0.5);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// calc all grid row to all child
+@each $device-size, $value in $grid-breakpoints-up{
+    @include media-breakpoint-up($device-size){
+        @for $i from 1 through $columns-row {
+            .row-#{$device-size}-#{$i} > * {
+                flex: 0 0 auto;
+                width: calc(100 /($columns-row / $i) * 1%);
+            }   
+        }
+    }
+}
+
