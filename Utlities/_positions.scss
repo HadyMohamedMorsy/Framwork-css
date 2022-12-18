@@ -1,0 +1,52 @@
+// relative
+.position-relative{
+    position: relative;
+}
+// absolute
+.position-absolute{
+    position: absolute;
+}
+
+// direction-position Top
+@each $device-size, $value in $grid-breakpoints-down {
+    @include media-breakpoint-up($device-size){
+        @each $Property-position , $value-direction  in $direction-Position {
+            .top-#{$device-size}-#{$Property-position}{
+                inset-block-start : $value-direction;
+            }
+        }
+    }
+}
+
+// direction-position bottom
+@each $device-size, $value in $grid-breakpoints-down {
+    @include media-breakpoint-up($device-size){
+        @each $Property-position , $value-direction  in $direction-Position {
+            .bottom-#{$device-size}-#{$Property-position}{
+                inset-block-end : $value-direction;
+            }
+        }
+    }
+}
+
+// direction-position left
+@each $device-size, $value in $grid-breakpoints-down {
+    @include media-breakpoint-up($device-size){
+        @each $Property-position , $value-direction  in $direction-Position {
+            .left-#{$device-size}-#{$Property-position}{
+                inset-inline-start : $value-direction;
+            }
+        }
+    }
+}
+
+// direction-position right
+@each $device-size, $value in $grid-breakpoints-down {
+    @include media-breakpoint-up($device-size){
+        @each $Property-position , $value-direction  in $direction-Position {
+            .right-#{$device-size}-#{$Property-position}{
+                inset-inline-end : $value-direction;
+            }
+        }
+    }
+}

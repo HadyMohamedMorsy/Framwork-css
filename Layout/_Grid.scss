@@ -1,0 +1,34 @@
+$columns: 12;
+
+// calc all grid column col-md-12 etc ...
+@each $device-size, $value in $grid-breakpoints-up{
+    @include media-breakpoint-up($device-size){
+        @for $i from 1 through $columns {
+            .col-#{$device-size}-#{$i} {
+                flex: 0 0 auto;
+                width: calc(100 /($columns / $i) * 1%);
+            }   
+        }
+    }
+}
+// All Offset Start Margin Line start
+@each $device-size, $value in $grid-breakpoints-up{
+    @include media-breakpoint-up($device-size){
+        @for $i from 1 through $columns {
+            .offset-start-#{$device-size}-#{$i} {
+                margin-inline-start:  calc(100 /($columns / $i) * 1%);
+            }   
+        }
+    }
+}
+
+// All Offset Start Margin Line end
+@each $device-size, $value in $grid-breakpoints-up{
+    @include media-breakpoint-up($device-size){
+        @for $i from 1 through $columns {
+            .offset-end-#{$device-size}-#{$i} {
+                margin-inline-end:  calc(100 /($columns / $i) * 1%);
+            }   
+        }
+    }
+}

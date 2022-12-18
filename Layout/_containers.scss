@@ -1,0 +1,25 @@
+.contentContainer{
+    padding-right: calc($bs-gutter-x * 0.5);
+    padding-left:  calc($bs-gutter-x * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  @each $device-size, $value in $grid-breakpoints-up{
+    .container-#{$device-size}{
+      @extend .contentContainer;
+    }
+  }
+  // All Devices Container Media container-small , container-md etc ...
+  @each $device-size, $value in $grid-breakpoints-up{
+    @media (min-width: $value) {
+      .container-#{$device-size} , .container{
+        @if map-has-key($container-max-widths, $device-size) {
+          max-width: map-get($container-max-widths, $device-size);
+        }@else {
+          // Log a warning.
+          @warn 'Invalid breakpoint: #{$device-size}.';
+        }
+      }
+    }
+  }

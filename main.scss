@@ -1,0 +1,37 @@
+@import  './variables/_variables.scss';
+@import './Layout/_breakpoints.scss';
+@import './Layout/_containers.scss';
+@import './Layout/_Grid.scss';
+@import './Utlities/positions';
+
+// font weight all value from 100 to 900 all devices font-bold-up-100-lg it is Class content min-width 
+@each $device-size, $value in $grid-breakpoints-up {
+  @include media-breakpoint-up($device-size){
+    @each $value_bold , $weight_Property  in $font-bold {
+      .font-bold-up-#{$device-size}-#{$value_bold}{
+        font-weight: $value_bold;
+      }
+    }
+  }
+}
+
+// font weight all value from 100 to 900 all devices font-bold-up-100-lg it is Class content max-width 
+@each $device-size, $value in $grid-breakpoints-down {
+  @include media-breakpoint-down($device-size){
+    @each $value_bold , $weight_Property  in $font-bold {
+      .font-bold-down-#{$device-size}-#{$value_bold}{
+        font-weight: $value_bold;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
