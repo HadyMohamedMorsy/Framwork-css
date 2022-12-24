@@ -1,0 +1,108 @@
+/**************************** dimensions width *******************/
+// width   dimensions all devices
+@each $key-dimensions, $value in $dimensions {
+  .w-#{$key-dimensions} {
+    width: $value;
+  }
+}
+// width   dimensions special  devices
+@each $device-size, $value in $grid-breakpoints-up {
+  @include media-breakpoint-up($device-size){
+    @each $key-dimensions, $value in $dimensions {
+      .w-#{$device-size}-#{$key-dimensions} {
+        width: $value;
+      }
+    }      
+  }
+}
+
+// min width   dimensions all devices
+@each $key-dimensions, $value in $dimensions {
+  .w-min-#{$key-dimensions} {
+    min-width: $value;
+  }
+}
+// min  width   dimensions special  devices
+@each $device-size, $value in $grid-breakpoints-up {
+  @include media-breakpoint-up($device-size){
+    @each $key-dimensions, $value in $dimensions {
+      .w-min-#{$device-size}-#{$key-dimensions} {
+        min-width: $value;
+      }
+    }      
+  }
+}
+
+// max width   dimensions all devices
+@each $key-dimensions, $value in $dimensions {
+  .w-max-#{$key-dimensions} {
+    max-width: $value;
+  }
+}
+// max  width   dimensions special  devices
+@each $device-size, $value in $grid-breakpoints-up {
+  @include media-breakpoint-up($device-size){
+    @each $key-dimensions, $value in $dimensions {
+      .w-max-#{$device-size}-#{$key-dimensions} {
+        max-width: $value;
+      }
+    }      
+  }
+}
+/**************************** dimensions width *******************/
+
+
+
+
+/**************************** dimensions height *******************/
+// width   dimensions all devices
+@each $key-dimensions, $value in $dimensions {
+  .h-#{$key-dimensions} {
+    height: $value;
+  }
+}
+// width   dimensions special  devices
+@each $device-size, $value in $grid-breakpoints-up {
+  @include media-breakpoint-up($device-size){
+    @each $key-dimensions, $value in $dimensions {
+      .h-#{$device-size}-#{$key-dimensions} {
+        height: $value;
+      }
+    }      
+  }
+}
+
+// min width   dimensions all devices
+@each $key-dimensions, $value in $dimensions {
+  .h-min-#{$key-dimensions} {
+    min-height: $value;
+  }
+}
+// min  width   dimensions special  devices
+@each $device-size, $value in $grid-breakpoints-up {
+  @include media-breakpoint-up($device-size){
+    @each $key-dimensions, $value in $dimensions {
+      .h-min-#{$device-size}-#{$key-dimensions} {
+        min-height: $value;
+      }
+    }      
+  }
+}
+
+// max width   dimensions all devices
+@each $key-dimensions, $value in $dimensions {
+  .h-max-#{$key-dimensions} {
+    max-height: $value;
+  }
+}
+// max  width   dimensions special  devices
+@each $device-size, $value in $grid-breakpoints-up {
+  @include media-breakpoint-up($device-size){
+    @each $key-dimensions, $value in $dimensions {
+      .h-max-#{$device-size}-#{$key-dimensions} {
+        max-height: $value;
+      }
+    }      
+  }
+}
+/**************************** dimensions height *******************/

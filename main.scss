@@ -1,6 +1,6 @@
 @import  './Variables/Variables';
-@import  './global/global';
 @import './Layout/_breakpoints.scss';
+@import  './global/global';
 @import './Layout/_containers.scss';
 @import './Layout/_Grid.scss';
 @import './Utlities/positions';
@@ -9,6 +9,8 @@
 @import './Utlities/text_direction';
 @import './Utlities/display';
 @import './Utlities/sizing_text';
+@import './Utlities/spacing';
+@import './dimensions/dimensions';
 
 // font weight all value from 100 to 900 all devices font-bold-up-100-lg it is Class content min-width 
 @each $device-size, $value in $grid-breakpoints-up {

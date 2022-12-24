@@ -66,6 +66,32 @@ $displays : (
     inline-flex : inline-flex,
 );
 
+// dimensions
+$dimensions: (
+  25 : 25%,
+  50 : 50%,
+  75 : 75%,
+  100: 100%,
+);
+
+// flex wrap
+$flex-direction : (
+    row : row,
+    row-reverse : row-reverse,
+    column : column,
+    column-reverse : column-reverse,
+);
+
+// grid Layout
+$grid : (
+    100 : 100,
+    200 : 200,
+    300 : 300,
+    400 : 400,
+    500 : 500,
+    600 : 600,
+);
+
 
 // font bold all 
 $font-bold: (

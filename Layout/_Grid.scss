@@ -4,10 +4,10 @@
     @include media-breakpoint-up($device-size){
         @for $i from 1 through $columns {
             .col-#{$device-size}-#{$i} {
-                flex: 0 0 auto;
+                flex: 0 1 auto;
                 padding-inline-start: map-get($padding , left );
                 padding-inline-end: map-get($padding , right );
-                width: calc(100 /($columns / $i) * 1% - (map-get($padding , left ) + map-get($padding , right )));
+                width: calc(100 /($columns / $i) * 1%);
             }   
         }
     }
@@ -48,5 +48,25 @@
                 margin-inline-end:  calc(100 /($columns / $i) * 1%);
             }   
         }
+    }
+}
+
+
+// All grid minmax special devices
+@each $device-size, $value in $grid-breakpoints-up{
+    @include media-breakpoint-up($device-size){
+        @each $grid-key, $value in $grid {
+            .g-#{$device-size}-#{$grid-key}{
+                grid-template-columns: repeat(auto-fill,minmax($value,1fr));
+            }
+        }
+    }
+}
+
+
+// All grid minmax All devices
+@each $grid-key, $value in $grid {
+    .g-#{$grid-key}{
+        grid-template-columns: repeat(auto-fill,minmax($value,1fr));
     }
 }

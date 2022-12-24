@@ -1,12 +1,12 @@
-// size from 1px to 100px all devices
-@for $i from 1 through 100{
+// size from 1px to 50px all devices
+@for $i from 1 through 50{
     .font-size-#{$i}{
         font-size:calc(($i/16) * 1rem);
     }
 }
 
 
-//size from 1px to 100px special devices
+//size from 1px to 50px special devices
 @each $device-size, $value in $grid-breakpoints-up {
     @include media-breakpoint-up($device-size){
         @for $i from 1 through 50{
@@ -16,3 +16,4 @@
         }        
     }
 }
+
